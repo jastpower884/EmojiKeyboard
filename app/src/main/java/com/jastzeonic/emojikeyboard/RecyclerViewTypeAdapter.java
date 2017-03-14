@@ -6,14 +6,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.jastzeonic.emojikeyboard.item.TypeItem;
+
 import java.util.List;
 
 /**
- * The recyclerView mRecyclerViewContentAdapter of keyboard item
+ * The recyclerView mRecyclerViewTypeAdapter of keyboard item
  * Created by Jast Lai on 2017/03/07.
  */
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements View.OnClickListener {
+public class RecyclerViewTypeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements View.OnClickListener {
 
 
     public interface OnItemClickListener {
@@ -25,15 +27,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     protected Context context;
 
-    public String[] getItems() {
+    public List<TypeItem> getItems() {
         return items;
     }
 
-    public void setItems(String[] items) {
+    public void setItems(List<TypeItem> items) {
         this.items = items;
     }
 
-    protected String[] items;
+    protected List<TypeItem> items;
 
     protected RecyclerView mRecyclerView;
 
@@ -43,7 +45,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     private OnItemClickListener mOnItemClickListener;
 
-    public RecyclerViewAdapter(Context context, String[] items, RecyclerView mRecyclerView) {
+    public RecyclerViewTypeAdapter(Context context, List<TypeItem> items, RecyclerView mRecyclerView) {
 
         this.context = context;
         this.items = items;
@@ -63,14 +65,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         ViewHolder viewHolder = (ViewHolder) holder;
 
-        viewHolder.mTextViewContent.setText(items[position]);
+        viewHolder.mTextViewContent.setText(items.get(position).getContent());
+
+        viewHolder.mTextViewContent.setSelected(items.get(position).isForcus());
+
 
     }
 
     @Override
     public int getItemCount() {
 
-        return items == null ? 0 : items.length;
+        return items == null ? 0 : items.size();
     }
 
 
@@ -87,7 +92,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         }
 
     }
-
 
 
 }
