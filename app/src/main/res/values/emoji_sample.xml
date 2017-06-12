@@ -8,14 +8,48 @@
         <item>ヽ(∀ﾟ )人(ﾟ∀ﾟ)人( ﾟ∀)人(∀ﾟ )人(ﾟ∀ﾟ)人( ﾟ∀)ﾉ</item>
         <item>(*´∀`)~♥</item>
         <item>σ`∀´)σ</item>
-        <item>_(:3 」∠ )_</item>
         <item>(〃∀〃)</item>
         <item>(^_っ^)</item>
         <item>(｡◕∀◕｡)</item>
         <item>(́◉◞౪◟◉‵)</item>
         <item>ヽ(́◕◞౪◟◕‵)ﾉ</item>
-        <item>(¦3[▓▓]</item>
         <item>థ౪థ</item>
     </string-array>
+    <string-array name="layzy">
+        <item>(¦3[▓▓]</item>
+        <item>_(:3 」∠ )_</item>
+    </string-array>
+
+    <string-array name="shock">
+        <item>Σ(lliдﾟﾉ)ﾉ</item>
+        <item>Σ(ﾟдﾟ)</item>
+        <item>ε=ε=ヾ(;ﾟдﾟ)/</item>
+        <item>(°ﾛ°٥)</item>
+        <item>｡ﾟ(ﾟ´ω`ﾟ)ﾟ｡</item>
+        <item>Σ(;ﾟдﾟ)</item>
+        <item>(●▼●;)</item>
+        <item>( ºΔº )</item>
+        <item>(´⊙ω⊙`)</item>
+        <item>Σ(ﾟДﾟ；≡；ﾟдﾟ)</item>
+        <item>( ͡° ͜ʖ ͡°)</item>
+        <item>(|||ﾟдﾟ)</item>
+        <item>Σ(ﾟдﾟ)</item>
+        <item>(((ﾟдﾟ)))</item>
+        <item>(д) ﾟﾟ</item>
+        <item>(((ﾟДﾟ;)))</item>
+        <item>(✘﹏✘ა)</item>
+        <item>( ºωº )</item>
+        <item>(ﾟдﾟ)</item>
+    </string-array>
+
+    <string-array name="emoji_type">
+        <item>Happy</item>
+        <item>Lazy</item>
+        <item>Shock</item>
+        <item>Sad</item>
+        <item>Angry</item>
+
+    </string-array>
+
 
 </resources>
