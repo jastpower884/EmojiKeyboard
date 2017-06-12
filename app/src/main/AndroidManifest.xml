@@ -18,7 +18,7 @@
         </activity>
 
         <service
-            android:name=".EmojiIME"
+            android:name=".EmojiIme"
             android:permission="android.permission.BIND_INPUT_METHOD">
             <meta-data
                 android:name="android.view.im"
