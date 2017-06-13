@@ -10,6 +10,8 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.jastzeonic.emojikeyboard.emojilist.RecyclerViewAdapter;
+
 /**
  * The Emoji IME controller
  * <p>
@@ -37,8 +39,7 @@ public class EmojiIme extends InputMethodService {
         recyclerViewEmojiContent.setLayoutManager(new GridLayoutManager(this, 3));
 
         items = getResources().getStringArray(R.array.happy);
-//        FirebaseApp.initializeApp(this);
-//        FirebaseDatabase database = FirebaseDatabase.getInstance();
+
 //        DatabaseReference myRef = database.getReference("message");
 //
 //

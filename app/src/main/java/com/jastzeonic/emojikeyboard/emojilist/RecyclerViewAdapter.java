@@ -1,4 +1,4 @@
-package com.jastzeonic.emojikeyboard;
+package com.jastzeonic.emojikeyboard.emojilist;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -6,16 +6,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.jastzeonic.emojikeyboard.item.TypeItem;
-
-import java.util.List;
+import com.jastzeonic.emojikeyboard.R;
 
 /**
- * The recyclerView mRecyclerViewTypeAdapter of keyboard item
+ * The recyclerView mRecyclerViewContentAdapter of keyboard item
  * Created by Jast Lai on 2017/03/07.
  */
 
-public class RecyclerViewTypeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements View.OnClickListener {
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements View.OnClickListener {
 
 
     public interface OnItemClickListener {
@@ -27,15 +25,15 @@ public class RecyclerViewTypeAdapter extends RecyclerView.Adapter<RecyclerView.V
 
     protected Context context;
 
-    public List<TypeItem> getItems() {
+    public String[] getItems() {
         return items;
     }
 
-    public void setItems(List<TypeItem> items) {
+    public void setItems(String[] items) {
         this.items = items;
     }
 
-    protected List<TypeItem> items;
+    protected String[] items;
 
     protected RecyclerView mRecyclerView;
 
@@ -45,7 +43,7 @@ public class RecyclerViewTypeAdapter extends RecyclerView.Adapter<RecyclerView.V
 
     private OnItemClickListener mOnItemClickListener;
 
-    public RecyclerViewTypeAdapter(Context context, List<TypeItem> items, RecyclerView mRecyclerView) {
+    public RecyclerViewAdapter(Context context, String[] items, RecyclerView mRecyclerView) {
 
         this.context = context;
         this.items = items;
@@ -65,17 +63,14 @@ public class RecyclerViewTypeAdapter extends RecyclerView.Adapter<RecyclerView.V
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         ViewHolder viewHolder = (ViewHolder) holder;
 
-        viewHolder.mTextViewContent.setText(items.get(position).getContent());
-
-        viewHolder.mTextViewContent.setSelected(items.get(position).isForcus());
-
+        viewHolder.mTextViewContent.setText(items[position]);
 
     }
 
     @Override
     public int getItemCount() {
 
-        return items == null ? 0 : items.size();
+        return items == null ? 0 : items.length;
     }
 
 
@@ -92,6 +87,7 @@ public class RecyclerViewTypeAdapter extends RecyclerView.Adapter<RecyclerView.V
         }
 
     }
+
 
 
 }

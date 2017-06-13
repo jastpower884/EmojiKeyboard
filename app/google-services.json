@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "944674421251",
+    "firebase_url": "https://emojikeybord-1dbc8.firebaseio.com",
+    "project_id": "emojikeybord-1dbc8",
+    "storage_bucket": "emojikeybord-1dbc8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:944674421251:android:3ab083956b40f2b4",
+        "android_client_info": {
+          "package_name": "com.jastzeonic.emojikeyboard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "944674421251-5ghertbml36mdcnq7k2bm4ou4ooc2e3q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jastzeonic.emojikeyboard",
+            "certificate_hash": "bb67b2c29a15e4b863f07eae0d80d1f8d615467b"
+          }
+        },
+        {
+          "client_id": "944674421251-l93arad20v32u9ipobv08eajlfph3s1j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPlvxTrYmY_XbGTUHSCGlBlefQOgx-ZtI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "944674421251-l93arad20v32u9ipobv08eajlfph3s1j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

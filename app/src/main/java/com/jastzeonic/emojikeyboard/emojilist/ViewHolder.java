@@ -1,4 +1,4 @@
-package com.jastzeonic.emojikeyboard;
+package com.jastzeonic.emojikeyboard.emojilist;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
