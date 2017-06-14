@@ -1,4 +1,4 @@
-package com.jastzeonic.emojikeyboard.item;
+package com.jastzeonic.emojikeyboard.database.item;
 
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Id;

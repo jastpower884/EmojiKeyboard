@@ -13,8 +13,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.jastzeonic.emojikeyboard.database.EmojiItemController;
 import com.jastzeonic.emojikeyboard.database.EmojiTypeController;
-import com.jastzeonic.emojikeyboard.item.EmojiItem;
-import com.jastzeonic.emojikeyboard.item.EmojiTypeItem;
+import com.jastzeonic.emojikeyboard.database.item.EmojiItem;
+import com.jastzeonic.emojikeyboard.database.item.EmojiTypeItem;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -54,33 +54,27 @@ public class EmojiUpdateService extends Service {
     private ValueEventListener emojiContentEventListener = new ValueEventListener() {
         @Override
         public void onDataChange(DataSnapshot dataSnapshot) {
-            // This method is called once with the initial value and again
-            // whenever data at this location is updated.
-            Log.d(TAG, "Child Count: " + dataSnapshot.getChildrenCount());
-
             Iterable<DataSnapshot> datas = dataSnapshot.getChildren();
 
             List<EmojiItem> results = new ArrayList<>();
             for (datas.iterator(); datas.iterator().hasNext(); ) {
                 DataSnapshot content = datas.iterator().next();
+                EmojiItem result = new EmojiItem();
 
+                Long id = ((Long) content.child("id").getValue());
+                String contentString = ((String) content.child("content").getValue());
+                String type = ((String) content.child("type").getValue());
 
-                try {
-                    EmojiItem result = new EmojiItem();
-                    JSONObject jsonObject = new JSONObject(content.getValue().toString());
-                    result.setId(jsonObject.getLong("id"));
-                    result.setContent(jsonObject.getString("content"));
-                    result.setType(jsonObject.getString("type"));
-                    results.add(result);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+                result.setId(id);
+                result.setContent(contentString);
+                result.setType(type);
+                results.add(result);
 
                 Log.v(TAG, "" + content.getValue().toString());
             }
 
             EmojiItemController emojiItemController = new EmojiItemController();
-            emojiItemController.getEmojiItemDao().insertInTx(results);
+            emojiItemController.getEmojiItemDao().insertOrReplaceInTx(results);
 
             String value = dataSnapshot.getKey();
             Log.d(TAG, "Value is: " + value);
@@ -102,18 +96,22 @@ public class EmojiUpdateService extends Service {
 
             Iterable<DataSnapshot> datas = dataSnapshot.getChildren();
             List<EmojiTypeItem> results = new ArrayList<>();
-            long index = 0;
-            for (datas.iterator(); datas.iterator().hasNext(); index++) {
+            for (datas.iterator(); datas.iterator().hasNext(); ) {
                 DataSnapshot content = datas.iterator().next();
                 EmojiTypeItem result = new EmojiTypeItem();
-                result.setId(index);
-                result.setContent(content.getValue().toString());
+
+                Long id = (Long) content.child("id").getValue();
+                String displayContent = (String) content.child("displayContent").getValue();
+                String typeName = (String) content.child("typeName").getValue();
+                result.setId(id);
+                result.setDisplayContent(displayContent);
+                result.setTypeName(typeName);
                 results.add(result);
 
             }
 
             EmojiTypeController emojiItemController = new EmojiTypeController();
-            emojiItemController.getDao().insertInTx(results);
+            emojiItemController.getDao().insertOrReplaceInTx(results);
             String value = dataSnapshot.getKey();
             Log.d(TAG, "Value is: " + value);
         }

@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="#88888888" />
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <stroke
-        android:width="3dp"
-        android:color="#373737" />
+    <item android:state_pressed="true">
+        <shape xmlns:android="http://schemas.android.com/apk/res/android">
+            <solid android:color="#DDD" />
 
-    <padding
-        android:bottom="1dp"
-        android:left="1dp"
-        android:right="1dp"
-        android:top="1dp" />
+            <stroke android:width="3dp" android:color="#DDD" />
 
-    <corners
-        android:bottomLeftRadius="5dp"
-        android:bottomRightRadius="5dp"
-        android:topLeftRadius="5dp"
-        android:topRightRadius="5dp" />
-</shape>
+            <padding android:bottom="1dp" android:left="1dp" android:right="1dp" android:top="1dp" />
+
+            <corners android:bottomLeftRadius="5dp" android:bottomRightRadius="5dp" android:topLeftRadius="5dp" android:topRightRadius="5dp" />
+        </shape>
+
+    </item>
+    <item>
+        <shape xmlns:android="http://schemas.android.com/apk/res/android">
+            <solid android:color="#BBB" />
+
+            <stroke android:width="3dp" android:color="#BBB" />
+
+            <padding android:bottom="1dp" android:left="1dp" android:right="1dp" android:top="1dp" />
+
+            <corners android:bottomLeftRadius="5dp" android:bottomRightRadius="5dp" android:topLeftRadius="5dp" android:topRightRadius="5dp" />
+        </shape>
+    </item>
+
+</selector>

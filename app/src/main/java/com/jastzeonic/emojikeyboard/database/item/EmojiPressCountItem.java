@@ -1,51 +1,46 @@
-package com.jastzeonic.emojikeyboard.item;
+package com.jastzeonic.emojikeyboard.database.item;
 
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Id;
-import org.greenrobot.greendao.annotation.Transient;
 import org.greenrobot.greendao.annotation.Generated;
 
 /**
- * Created by Jast Lai on 09/03/2017.
+ * Created by ptc_02008 on 2017/6/13.
  */
 @Entity
-public class EmojiTypeItem {
+public class EmojiPressCountItem {
 
-    @Id(autoincrement = true)
+    @Id
     private Long id;
-
+    private Long emojiId;
     private String content;
-
-    @Transient
-    private boolean focus;
-
-    @Generated(hash = 809407416)
-    public EmojiTypeItem(Long id, String content) {
+    @Generated(hash = 282949736)
+    public EmojiPressCountItem(Long id, Long emojiId, String content) {
         this.id = id;
+        this.emojiId = emojiId;
         this.content = content;
     }
-
-    @Generated(hash = 364141089)
-    public EmojiTypeItem() {
+    @Generated(hash = 1328922864)
+    public EmojiPressCountItem() {
     }
-
     public Long getId() {
         return this.id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
-
+    public Long getEmojiId() {
+        return this.emojiId;
+    }
+    public void setEmojiId(Long emojiId) {
+        this.emojiId = emojiId;
+    }
     public String getContent() {
         return this.content;
     }
-
     public void setContent(String content) {
         this.content = content;
     }
 
 
 }
-
-

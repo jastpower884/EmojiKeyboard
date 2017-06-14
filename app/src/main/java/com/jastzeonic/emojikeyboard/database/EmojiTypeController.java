@@ -1,7 +1,7 @@
 package com.jastzeonic.emojikeyboard.database;
 
-import com.jastzeonic.emojikeyboard.item.EmojiTypeItem;
-import com.jastzeonic.emojikeyboard.item.EmojiTypeItemDao;
+import com.jastzeonic.emojikeyboard.database.item.EmojiTypeItem;
+import com.jastzeonic.emojikeyboard.database.item.EmojiTypeItemDao;
 
 import org.greenrobot.greendao.query.QueryBuilder;
 

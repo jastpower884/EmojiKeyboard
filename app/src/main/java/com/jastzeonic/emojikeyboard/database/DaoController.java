@@ -2,8 +2,8 @@ package com.jastzeonic.emojikeyboard.database;
 
 import android.content.Context;
 
-import com.jastzeonic.emojikeyboard.item.DaoMaster;
-import com.jastzeonic.emojikeyboard.item.DaoSession;
+import com.jastzeonic.emojikeyboard.database.item.DaoMaster;
+import com.jastzeonic.emojikeyboard.database.item.DaoSession;
 
 import org.greenrobot.greendao.database.Database;
 

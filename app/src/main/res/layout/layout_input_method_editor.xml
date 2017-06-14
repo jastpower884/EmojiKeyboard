@@ -27,11 +27,12 @@
         android:layout_height="40dp"
         android:layout_marginTop="@dimen/bottom_margin"
         android:background="@drawable/bg_button"
+        android:clickable="true"
         android:gravity="center"
         android:text="@string/comma"
         android:textColor="#373737"
         android:textSize="12pt"
-        app:layout_constraintLeft_toRightOf="@+id/image_view_space_bar"
+        app:layout_constraintLeft_toRightOf="@+id/text_view_space_bar"
         app:layout_constraintTop_toBottomOf="@+id/recycler_view_emoji_content" />
 
 
@@ -41,6 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/bottom_margin"
         android:background="@drawable/bg_button"
+        android:clickable="true"
         android:padding="5dp"
         android:src="@drawable/ic_backspace_black_24dp"
         app:layout_constraintLeft_toRightOf="@+id/text_view_comma"
@@ -48,15 +50,18 @@
         app:layout_constraintTop_toBottomOf="@+id/recycler_view_emoji_content" />
 
 
-    <ImageView
-        android:id="@+id/image_view_space_bar"
+    <TextView
+        android:id="@+id/text_view_space_bar"
         android:layout_width="180dp"
         android:layout_height="40dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="@dimen/bottom_margin"
+        android:background="@drawable/bg_space_bar"
+        android:clickable="true"
+        android:gravity="center"
         android:padding="5dp"
-        android:src="@drawable/bg_space_bar"
+        android:text="@string/app_name"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recycler_view_emoji_content" />
@@ -67,6 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/bottom_margin"
         android:background="@drawable/bg_button"
+        android:clickable="true"
         android:padding="5dp"
         android:src="@drawable/ic_global"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -81,9 +87,10 @@
         android:layout_marginTop="@dimen/bottom_margin"
         android:layout_weight="2"
         android:background="@drawable/bg_button"
+        android:clickable="true"
         android:padding="5dp"
         android:src="@drawable/ic_clear_black"
-        app:layout_constraintRight_toLeftOf="@+id/image_view_space_bar"
+        app:layout_constraintRight_toLeftOf="@+id/text_view_space_bar"
         app:layout_constraintTop_toBottomOf="@+id/recycler_view_emoji_content" />
 
 
