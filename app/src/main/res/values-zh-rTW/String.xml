@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">顏文字鍵盤</string>
+    <string name="subtype_emoji_global">顏文字</string>
+    <string name="comma">&#x2c;</string>
+
+</resources>

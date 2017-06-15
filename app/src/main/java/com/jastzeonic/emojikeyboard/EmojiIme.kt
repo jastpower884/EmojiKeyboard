@@ -56,6 +56,10 @@ class EmojiIme : InputMethodService() {
 
         if (emojiItemTypeItems.isNotEmpty()) {
             emojiItemTypeItems.first().isFocus = true
+
+            for (emojiItemTypeItem in emojiItemTypeItems) {
+                emojiItemTypeItem.isFocus = false
+            }
             emojiContentItems = getEmojiContent(emojiItemTypeItems.first().typeName)
         } else {
             emojiContentItems = getEmojiContent("angry")

@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="280dp"
     android:background="#FFFFFF"
-    android:padding="5dp">
+    android:padding="5dp"
+    android:paddingBottom="20dp">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view_emoji_class"
         android:layout_width="0dp"
         android:layout_height="40dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view_emoji_content"
@@ -19,11 +25,13 @@
         android:layout_height="150dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recycler_view_emoji_class" />
+        app:layout_constraintTop_toBottomOf="@+id/recycler_view_emoji_class"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1" />
 
     <TextView
         android:id="@+id/text_view_comma"
-        android:layout_width="40dp"
+        android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginTop="@dimen/bottom_margin"
         android:background="@drawable/bg_button"
@@ -32,7 +40,9 @@
         android:text="@string/comma"
         android:textColor="#373737"
         android:textSize="12pt"
+        app:layout_constraintHorizontal_weight="1.8"
         app:layout_constraintLeft_toRightOf="@+id/text_view_space_bar"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_back_space"
         app:layout_constraintTop_toBottomOf="@+id/recycler_view_emoji_content" />
 
 
@@ -43,8 +53,9 @@
         android:layout_marginTop="@dimen/bottom_margin"
         android:background="@drawable/bg_button"
         android:clickable="true"
-        android:padding="5dp"
+        android:padding="10dp"
         android:src="@drawable/ic_backspace_black_24dp"
+        app:layout_constraintHorizontal_weight="2"
         app:layout_constraintLeft_toRightOf="@+id/text_view_comma"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recycler_view_emoji_content" />
@@ -52,10 +63,12 @@
 
     <TextView
         android:id="@+id/text_view_space_bar"
-        android:layout_width="180dp"
+        android:layout_width="120dp"
         android:layout_height="40dp"
         android:layout_marginEnd="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="@dimen/bottom_margin"
         android:background="@drawable/bg_space_bar"
         android:clickable="true"
@@ -68,15 +81,16 @@
 
     <ImageView
         android:id="@+id/image_view_global"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/bottom_margin"
         android:background="@drawable/bg_button"
         android:clickable="true"
-        android:padding="5dp"
+        android:padding="10dp"
         android:src="@drawable/ic_global"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/image_view_clear_line"
+        app:layout_constraintHorizontal_weight="1.8"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_clear_line"
+        app:layout_constraintRight_toLeftOf="@+id/text_view_space_bar"
         app:layout_constraintTop_toBottomOf="@+id/recycler_view_emoji_content" />
 
 
@@ -88,9 +102,11 @@
         android:layout_weight="2"
         android:background="@drawable/bg_button"
         android:clickable="true"
-        android:padding="5dp"
+        android:padding="10dp"
         android:src="@drawable/ic_clear_black"
-        app:layout_constraintRight_toLeftOf="@+id/text_view_space_bar"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_global"
         app:layout_constraintTop_toBottomOf="@+id/recycler_view_emoji_content" />
 
 
