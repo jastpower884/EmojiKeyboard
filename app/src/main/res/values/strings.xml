@@ -2,5 +2,6 @@
     <string name="app_name">Emoji Keyboard</string>
     <string name="subtype_emoji_global">Emoji</string>
     <string name="comma">&#x2c;</string>
+    <string name="text_introdution">Producer : Jast Lai\nSorry, I haven\'t thought about what should I build here.</string>
 
 </resources>
