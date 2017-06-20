@@ -14,6 +14,8 @@ import com.jastzeonic.emojikeyboard.database.item.EmojiItem
 import android.opengl.ETC1.getWidth
 import android.util.DisplayMetrics
 import android.view.WindowManager
+import com.jastzeonic.emojikeyboard.database.EmojiItemController
+import com.jastzeonic.emojikeyboard.observer.EmojiObserver
 
 
 /**
@@ -21,11 +23,17 @@ import android.view.WindowManager
  * Created by Jast Lai on 2017/03/07.
  */
 
-class RecyclerViewAdapter(val context: Context, var items: List<EmojiItem>, val mOnItemClickListener: OnItemTouchListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class RecyclerViewAdapter(val context: Context, var emojiType: String, val mOnItemClickListener: OnItemTouchListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
 
+    var items: List<EmojiItem>
     var displaymetrics: DisplayMetrics = DisplayMetrics()
     var isDisplaymetricsInit: Boolean = false
+
+
+    init {
+        items = getEmojiContent(emojiType)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.item_key, parent, false)
@@ -59,8 +67,20 @@ class RecyclerViewAdapter(val context: Context, var items: List<EmojiItem>, val 
         return displaymetrics;
     }
 
-    fun setitems(items: List<EmojiItem>) {
-        this.items = items
+    fun getEmojiContent(itemType: String): List<EmojiItem> {
+        val controller: EmojiItemController = EmojiItemController()
+        return controller.selectItemByItem(itemType)
     }
 
+    fun update() {
+        notifyItemRangeRemoved(0, items.size)
+        items = getEmojiContent(emojiType)
+        notifyItemRangeInserted(0, items.size)
+
+
+    }
+
+    internal fun setEmojiType(emojiType: String): Unit {
+        this.emojiType = emojiType
+    }
 }

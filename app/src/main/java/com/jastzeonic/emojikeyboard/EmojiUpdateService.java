@@ -74,10 +74,14 @@ public class EmojiUpdateService extends Service {
             }
 
             EmojiItemController emojiItemController = new EmojiItemController();
+            emojiItemController.getEmojiItemDao().deleteAll();
             emojiItemController.getEmojiItemDao().insertOrReplaceInTx(results);
 
             String value = dataSnapshot.getKey();
             Log.d(TAG, "Value is: " + value);
+
+            sendBroadcast(new Intent(getString(R.string.text_intent_filter)));
+
         }
 
         @Override
@@ -111,9 +115,11 @@ public class EmojiUpdateService extends Service {
             }
 
             EmojiTypeController emojiItemController = new EmojiTypeController();
+            emojiItemController.getDao().deleteAll();
             emojiItemController.getDao().insertOrReplaceInTx(results);
             String value = dataSnapshot.getKey();
             Log.d(TAG, "Value is: " + value);
+            sendBroadcast(new Intent(getString(R.string.text_intent_filter)));
         }
 
         @Override

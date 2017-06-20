@@ -5,4 +5,7 @@
     <string name="comma">&#x2c;</string>
     <string name="text_introdution">作者 : Jast Lai\n呃&#8230;這邊我還沒想到要寫啥</string>
 
+    <string name="text_intent_filter">intent_to_update_type_or_content</string>
+
+
 </resources>
